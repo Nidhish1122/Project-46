@@ -1,0 +1,120 @@
+  var line,f;
+  var ob;
+  var score
+  var gameState=0,end=0,play=1
+  function setup(){
+    line=createSprite(400,300,800,5)
+line.shapeColor="black"
+f=createSprite(400,250,3,200)
+f.shapeColor="black"
+ob=createSprite(900,300,30,40)
+ob.shapeColor="white"
+score=0;
+ }
+ function draw(){
+ createCanvas(800,400)
+ background("lime")
+ fill("white")
+ textSize(18)
+ text("Score:"+score,100,100)
+ text("Press up arrow to launch the focus",500,100)
+ text("Press space when the focus is touching the line",480,120)
+ text("if you press late you lose",500,140)
+ if(keyDown(UP_ARROW)){
+     gameState=1
+ }
+ if(gameState===play){
+    ob.velocityX=-2
+if(keyDown("space") && ob.isTouching(f)){
+    score=score+1
+}
+if(ob.x<0){
+    ob.x=900
+}
+if(score>5){
+    ob.velocityX=-5  
+}
+if(score>10){
+    ob.velocityX=-6  
+}
+if(score>15){
+    ob.velocityX=-7  
+}
+if(score>20){
+    ob.velocityX=-8
+}
+if(score>25){
+    ob.velocityX=-9  
+}
+if(score>30){
+    ob.velocityX=-10
+}
+if(score>35){
+    ob.velocityX=-11  
+}
+if(score>40){
+    ob.velocityX=-12 
+}
+if(score>45){
+    ob.velocityX=-13 
+}
+if(score>50){
+    ob.velocityX=-14 
+}
+if(score>55){
+    ob.velocityX=-15 
+}
+if(score>60){
+    ob.velocityX=-16 
+}
+if(score>65){
+    ob.velocityX=-17 
+}
+if(score>70){
+    ob.velocityX=-18 
+}
+if(score>75){
+    ob.velocityX=-19 
+}
+if(score>80){
+    ob.velocityX=-20 
+}
+if(score>85){
+    ob.velocityX=-21
+}
+if(score>90){
+    ob.velocityX=-22
+}
+if(score>95){
+    ob.velocityX=-23
+}
+if(score>100){
+    ob.velocityX=-24
+}
+if(score>105){
+    ob.velocityX=-25
+}
+if(score>110){
+    ob.velocityX=-26
+}
+if(score>115){
+    ob.velocityX=-27
+}
+if(score>120){
+    ob.velocityX=-28
+}
+if(score>125){
+    ob.velocityX=-29
+}
+if(score>130){
+    ob.velocityX=-30
+}
+else if(keyDown("space") && ob.isTouching(f)===false){
+    gameState=end
+    f.visible=false
+    ob.visible=false
+    line.visible=false
+}
+ }
+ drawSprites()
+ }
